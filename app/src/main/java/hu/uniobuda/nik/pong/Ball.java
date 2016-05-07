@@ -4,7 +4,6 @@ package hu.uniobuda.nik.pong;
  * Created by VIP on 2016.04.25..
  */
 public class Ball {
-
     public int x,y,size;//x,y koordinata,sugar
     public int height,width;//screen size
     public float ex,ey;//x,y tengely menti egységnyi pixelszám

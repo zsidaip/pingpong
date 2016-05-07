@@ -15,7 +15,8 @@
         android:text="Phone vs. Player"
         android:id="@+id/button"
         android:onClick="buttonOnClick"
-        android:layout_centerVertical="true"
+        android:layout_marginBottom="63dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -24,8 +25,27 @@
         android:layout_height="wrap_content"
         android:text="Exit"
         android:id="@+id/button2"
-        android:layout_below="@+id/button"
+        android:onClick="btnexitonClick"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Player vs. Player"
+        android:id="@+id/btnpvsp"
         android:layout_alignParentStart="true"
-        android:onClick="btnexitonClick" />
+        android:layout_above="@+id/button"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Playername"
+        android:id="@+id/btnplayername"
+        android:onClick="setplayerOnClick"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnpvsp"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>

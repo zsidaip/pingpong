@@ -1,5 +1,6 @@
 package hu.uniobuda.nik.pong;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,14 +15,34 @@ import android.widget.TextView;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class GameActivity extends AppCompatActivity {
     Game game;
     SensorManager manager;
     TextView points,result;
+    String playername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        playername="";
+        try {
+            FileInputStream fis = openFileInput("PongStore");
+            byte[] buffer = new byte[1024]; int len;
+            while((len = fis.read(buffer)) > 0)
+                playername=new String(buffer, 0, len);
+                fis.close();
+        } catch (FileNotFoundException e) {
+            Intent masik=new Intent(this,PlayerActivity.class);
+            startActivity(masik);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(playername==""){
+            Intent masik=new Intent(this,PlayerActivity.class);
+            startActivity(masik);
+        }
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -48,11 +69,11 @@ public class GameActivity extends AppCompatActivity {
                 }
                 if (game.prec1 != null) {
                     game.prec1.setMove(direction, move);
-                    points.setText("Jarvis:" + game.point2 + "|Player:" + game.point1);
+                    points.setText("Jarvis:" + game.point2 + "|"+playername+":" + game.point1);
                 }
             }else{
                 result.setText(game.getResult());
-                points.setText("Jarvis:" + game.point2 + "|Player:" + game.point1);
+                points.setText("Jarvis:" + game.point2 + "|"+playername+":" + game.point1);
                 Button btn= (Button) findViewById(R.id.btnnewgame);
                 btn.setVisibility(View.VISIBLE);
             }

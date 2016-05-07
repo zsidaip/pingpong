@@ -71,7 +71,7 @@ public class Game extends View {
         canvas.drawRect(prec2.x, prec2.y, prec2.x2, prec2.y2, this.white);
         //recalculate ball pos
         canvas.drawText("Player2:"+String.valueOf(point2)+" | Player1: "+String.valueOf(point1),getWidth()/2,30,this.white);
-        canvas.drawText( String.valueOf(prec1.ex)+"x"+String.valueOf(prec1.ey),40,40,white);
+        //canvas.drawText( String.valueOf(prec1.ex)+"x"+String.valueOf(prec1.ey),40,40,white);
 
         invalidate();
     }

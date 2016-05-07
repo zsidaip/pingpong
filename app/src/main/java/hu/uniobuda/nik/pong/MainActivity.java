@@ -17,4 +17,8 @@ public class MainActivity extends AppCompatActivity {
         Intent masik=new Intent(this,GameActivity.class);
         startActivity(masik);
     }
+    public void btnexitonClick(View v) {
+        finish();
+        System.exit(0);
+    }
 }

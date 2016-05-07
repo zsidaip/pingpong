@@ -54,5 +54,4 @@ public class GameActivity extends AppCompatActivity {
         super.onPause();
         manager.unregisterListener(listener);
     }
-
 }

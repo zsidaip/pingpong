@@ -33,7 +33,7 @@ public class Tile {
             this.y2 = height;
             this.y = (int) (height-(h_size*ey));
         }
-        this.center=(this.y+h_size/2);
+        this.center=(this.y+Math.round(h_size*this.ey/2));
     }
     public int getCenter(){
         return this.center;

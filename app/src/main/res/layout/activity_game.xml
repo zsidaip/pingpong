@@ -7,6 +7,47 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="hu.uniobuda.nik.pong.GameActivity">
+    tools:context="hu.uniobuda.nik.pong.GameActivity"
+    android:background="@color/black"
+    >
+
+    <hu.uniobuda.nik.pong.Game
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gamelayer"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Jarvis:0|Player:0"
+        android:id="@+id/txtvwscore"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/txtresult"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        android:id="@+id/btnnewgame"
+        android:layout_below="@+id/txtresult"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:onClick="btnexitonClick"
+        android:visibility="invisible"/>
+
 
 </RelativeLayout>

@@ -11,7 +11,6 @@ import android.view.View;
  * Created by VIP on 2016.04.20..
  */
 public class Game extends View {
-
     private Rect ore;
     private Paint black;
     private Paint white;

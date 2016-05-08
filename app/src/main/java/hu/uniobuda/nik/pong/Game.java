@@ -15,13 +15,12 @@ import android.view.View;
  * Created by VIP on 2016.04.20..
  */
 public class Game extends View {
-    private Rect ore;
+    private Rect ore;//kepernyo torlo teglalap
     private Paint black;
     private Paint white;
-    Ball ball;
-    Tile prec1,prec2;
-    private boolean b_init;
-    private int ball_x_direction,ball_y_direction;
+    Ball ball;//labda
+    Tile prec1,prec2;//jatekosok
+    private boolean b_init;//van-e mar initializalva a jatek
     byte point1,point2;
 
     public String getResult() {
@@ -111,8 +110,7 @@ public class Game extends View {
         white.setColor(Color.WHITE);
         white.setStyle(Paint.Style.FILL);
         b_init=false;
-        ball_x_direction=1;
-        ball_y_direction=1;
+
         this.eredmeny="";
     }
 

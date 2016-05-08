@@ -17,7 +17,7 @@ public class PlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        String playername="";
+        String playername="";//playernev kezelese
         try {
             FileInputStream fis = openFileInput("PongStore");
             byte[] buffer = new byte[1024]; int len;
@@ -34,6 +34,7 @@ public class PlayerActivity extends AppCompatActivity {
         pname.setText(playername);
     }
 
+    //playernev mentese es kilepes az activity bol
     public void btnsaveplayerClick(View v) {
         EditText pname= (EditText) findViewById(R.id.edtplayer);
         String name=pname.getText().toString();

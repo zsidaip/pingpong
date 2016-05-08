@@ -2,13 +2,14 @@ package hu.uniobuda.nik.pong;
 
 /**
  * Created by VIP on 2016.04.25..
+ *
  */
 public class Ball {
     public int x,y,size;//x,y koordinata,sugar
     public int height,width;//screen size
-    public float ex,ey;//x,y tengely menti egységnyi pixelszám
-    private int ball_x_direction,ball_y_direction;
-    int speed;
+    public float ex,ey;//x,y tengely menti egysegnyi pixelszam
+    private int ball_x_direction,ball_y_direction;//labda iranyvektora
+    int speed;//labda sebessege
 
     public Ball(int size, int height, int width, float ex, float ey) {
         this.size = size;
@@ -19,6 +20,7 @@ public class Ball {
         this.init();
     }
 
+    //labda alapbeallitasa
     public void init(){
         this.ball_x_direction=1;
         this.ball_y_direction=1;
@@ -27,6 +29,7 @@ public class Ball {
         this.speed=0;
     }
 
+    //labda mozgasanak meghatarozasa a terfelek vegen, es jelzes ha valahol kiment a palyarol
     public int Move(Tile player1,Tile player2) {
         int res=0; boolean setydir=false;
         if (x+this.size >= player1.x && x+this.size <= player1.x2 &&player1.isMatch(y)) {

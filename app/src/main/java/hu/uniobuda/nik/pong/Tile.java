@@ -3,11 +3,11 @@ package hu.uniobuda.nik.pong;
 public class Tile {
     public int x,y,x2,y2;//x,y
     public int height,width;//screen size
-    public float ex,ey;//x,y tengely menti egységnyi pixelszám
+    public float ex,ey;//x,y tengely menti egysegnyi pixelszam
     private int center;//y tengelymenti kozeppontja a teglalapnak
     private int w_size=9;//objektum szelesseg
     private int h_size=50;//objektum magassag
-    private int direction,speed;
+    private int direction,speed;//jatekos iranya, es mozgassebessege
 
     public Tile(int x, int y, int height, int width, float ex, float ey){
         this.x = x; this.x2= (int) (this.x+w_size*ex);
@@ -19,11 +19,13 @@ public class Tile {
         this.ey = ey;
     }
 
+    //mozgas irany es sebesseg beallitasa
     public void setMove(int direction,int speed){
         this.direction=direction;
         this.speed=speed;
     }
 
+    //mozgatas a palya hatarai kozt
     public void Move(){
         this.y+=direction*this.ey*speed;
         if(this.y<0)this.y=0;

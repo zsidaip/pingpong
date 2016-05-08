@@ -33,19 +33,39 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player vs. Player"
-        android:id="@+id/btnpvsp"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/button"
-        android:layout_alignParentLeft="true" />
+        android:text="Set Playername"
+        android:id="@+id/btnplayername"
+        android:onClick="setplayerOnClick"
+        android:layout_above="@+id/buttonHost"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <View
+        android:id="@+id/centerShim"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Set Playername"
-        android:id="@+id/btnplayername"
-        android:onClick="setplayerOnClick"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/btnpvsp"
-        android:layout_alignParentLeft="true" />
+        android:text="Join Game"
+        android:id="@+id/buttonJoin"
+        android:onClick="buttonJoinOnClick"
+        android:layout_above="@+id/button"
+        android:layout_toLeftOf="@+id/centerShim"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Host Game"
+        android:id="@+id/buttonHost"
+        android:onClick="buttonHostOnClick"
+        android:layout_toRightOf="@+id/centerShim"
+        android:layout_above="@+id/button"
+        android:layout_alignParentRight="true" />
+
+
 </RelativeLayout>

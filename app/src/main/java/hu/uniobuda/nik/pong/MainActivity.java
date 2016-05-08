@@ -15,12 +15,24 @@ public class MainActivity extends AppCompatActivity {
     //jatek inditasa telo vs player
     public void buttonOnClick(View v){
         Intent masik=new Intent(this,GameActivity.class);
+        masik.putExtra("mode","comp");
         startActivity(masik);
     }
     //jatekosnev beallitasa inditasa
     public void setplayerOnClick(View v){
-//        setContentView(R.layout.activity_main2);
         Intent masik=new Intent(this,PlayerActivity.class);
+        startActivity(masik);
+    }
+
+    public void buttonJoinOnClick(View view) {
+        Intent masik=new Intent(this,GameActivity.class);
+        masik.putExtra("mode", "join");
+        startActivity(masik);
+    }
+
+    public void buttonHostOnClick(View view) {
+        Intent masik=new Intent(this,GameActivity.class);
+        masik.putExtra("mode", "host");
         startActivity(masik);
     }
     //kilepes a jatekbol

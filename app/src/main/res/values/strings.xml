@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pong</string>
+    <string name="bth_paroztat">PAROZTATNI KENE</string>
+    <string name="bth_nincs">NINCS BT</string>
+    <string name="strings" />
+
 </resources>
